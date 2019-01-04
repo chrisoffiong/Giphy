@@ -1,0 +1,52 @@
+
+$(document).ready(function () {
+    let gameArray = ["God of War", "League of Legends", "Pokemon", "Persona", "Red Dead Redemption", "Detroit Become Human", "Final Fantasy"]
+    let buttonMaker = function () {
+        for (j = 0; j < gameArray.length; j++) {
+            $("#game-buttons").append(`<button class="btn btn-secondary" data-button="${gameArray[j]}">${gameArray[j]}</button>`)
+            
+        }
+    }
+    buttonMaker();
+    function buttonLogic() {
+        $("button").on("click", function () {
+            $("#giphydiv").empty()
+            let button = $(this).attr("data-button")
+            let apiKey = "dc6zaTOxFJmzC&limit=10"
+            let queryURL = "https://api.giphy.com/v1/gifs/search?api_key=" + apiKey + "&q=" + button
+            $.ajax({
+                url: queryURL,
+                method: "GET"
+            })
+                .then(function (response) {
+                    let gifs = response.data;
+                    for (i = 0; i < gifs.length; i++) {
+                        let imageUrl = response.data[i].images.original.url
+                        let rating = response.data[i].rating
+                        let Image = $("<img>");
+                        Image.attr("src", imageUrl)
+                        $("#giphydiv").prepend(Image, `<p> Rating: ${rating.toUpperCase()}</p>`)
+                        $("#giphydiv").prepend(`<button class="btn btn-warning"><a download href="${imageUrl}" download="game.gif"> Download </button>`)
+                    
+                    }
+                    console.log(response)
+                })
+
+        })
+    }
+    buttonLogic()
+    $('.addShow').on('click', function () {
+        let newShow = $('.newShowInput').val().trim();
+        if ($('.newShowInput').val() == "") {
+            return false;
+        }
+        gameArray.empty()
+        gameArray.push(newShow);
+        console.log($('.newShowInput').val());
+        buttonMaker();
+        buttonLogic();
+    })
+})
+
+
+

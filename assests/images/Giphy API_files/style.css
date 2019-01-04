@@ -1,0 +1,29 @@
+.jumbotron{
+    text-align: center;
+    background-image: url("../images/bg.jpg");
+    color: rgba(88, 194, 132, 0.788);
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: 1700px 400px;
+    font-family: 'Alfa Slab One', cursive;
+    text-decoration: underline;
+}
+
+#game-buttons, p {
+    text-align: center;
+    
+}
+.card {
+    text-align: center;
+}
+input {
+    float: right;
+
+
+}
+#giphydiv {
+    text-align: center;
+}
+.welcome {
+    font-family: Helveticia;
+}
