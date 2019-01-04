@@ -1,6 +1,6 @@
 
 $(document).ready(function () {
-    let gameArray = ["God of War", "League of Legends", "Pokemon", "Persona", "Red Dead Redemption", "Detroit Become Human", "Final Fantasy"]
+    let gameArray = ["God of War", "League of Legends", "Pokemon", "Persona", "Red Dead Redemption", "Detroit Become Human", "Final Fantasy", "Kingdom Hearts"]
     let buttonMaker = function () {
         for (j = 0; j < gameArray.length; j++) {
             $("#game-buttons").append(`<button class="btn btn-secondary mr-1 mb-2" data-button="${gameArray[j]}">${gameArray[j]}</button>`)
