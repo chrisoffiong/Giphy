@@ -1,7 +1,7 @@
 .jumbotron{
     text-align: center;
     background-image: url("../images/bg.jpg");
-    color: rgba(88, 194, 132, 0.788);
+    color: rgba(255, 255, 255, 0.788);
     width: 100%;
     background-repeat: no-repeat;
     background-size: 1700px 400px;
@@ -9,17 +9,22 @@
     text-decoration: underline;
 }
 .addShow {
-    background-color: rgba(7, 20, 22, 0.459);
+    background-color: rgba(68, 82, 92, 0.459);
+    color: white;
 }
 .newShowInput {
     width: 80%;
+
 }
 .card-header {
-    background-color: rgb(0, 119, 128);
+    background-color: rgba(28, 25, 29, 0.582);
 }
 #game-buttons, p {
     text-align: center;
-    
+    color: white;
+}
+.card-body {
+    background-color: rgba(128, 128, 128, 0.699);
 }
 input {
     float: right;
@@ -38,3 +43,6 @@ input {
     font-family: 'Alfa Slab One', cursive;
 }
 
+body {
+    background-image: url("../images/background.jpg")
+}
